@@ -3,66 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Ravi Chaudhary - Sustainability Technologist</title>
+    <style>
+        :root {
+            --primary-color: #2b8c44;
+            --secondary-color: #4CAF50;
+            --accent-color: #8BC34A;
+            --text-color: #1B5E20;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #F1F8E9;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #F9FBE7;
+            border-radius: 10px;
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            background-color: var(--secondary-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: var(--primary-color);
+            border-top: 1px solid var(--accent-color);
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .leaf-icon {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>My Curriculum Vitae/Resume</h1>
-    <img src="./Assets/myphoto.jpg" height="200"/>
-    <h2>Profile Summary</h2>
-    <p>A versatile Executive professional, holding more than 8 years of experience in Central Board of Indirect Taxes and Customs, Ministry of Finance playing an Inspector role 
-        having worked in all the indirect taxes incurred in India. Articulate communicator with outstanding analytical abilities, 
-        problem-solving, decision-making and interpersonal skills.</p>
-    <hr/>
-    <h2>Education</h2>
-    <p>
-        <ul>
-            <li>Masters in Engineering (M. E.) in Electrical Engineering securing a CGPI of 8.74/10 from PEC University of Technology, Chandigarh, India – 2013.</li>
-            <li>Bachelor in Technology (B. E.) in Electrical & Electronics Engineering securing a CGPI of 7.29/10 from National Institute of Technology, Hamirpur, Inda – 2011</li>
-        </ul>
-    </p>
-    <hr/>
-    <h2>Work Experience</h2>
-    <p>For the last 8 years, with transfers every 6 months, I have got an experience in an aura of fields from Central Excise, Goods and Service Tax to Customs operations. 
-    I am well versed with the indirect taxation concept of India and calculation of duties and taxes based on different HSN codes. 
-    Furthermore, I have also worked in Risk Management System of India with respect to V.O.Chidambaram Port,  Tuticorin, a major port of India. 
-    All of my Annual Performance Appraisals have been graded as Excellent by my Superior Officers. 
-    The role of Inspectors in Ministry of Finance is paramount where they manage the Section with the help of Junior Staff under the supervision of Superintendent. </p>
-    <hr/>
-    <h2>Skills</h2>
-    <h3>Soft Skills</h3>
-    <p>
-        <ul>
-            <li>Learning Ability & Effective Communication</li>
-            <li>Hard working and Team Player</li>
-            <li>Self-Motivated and Determined</li>
-        </ul>
-    </p>
-    <h3>Functional Skills</h3>
-    <p>
-        <ul>
-            <li>Competent in softwares like MATLAB, Adobe Flash, Adobe
-                Dreamweaver, Visual Basic, Microsoft applications like Word, Excel, 
-                Powerpoint.</li>
-            <li>Knowledge Management based on Circulars/Instructions issued by Ministry of Finance.</li>
-            <li>Identification and Scrutiny of Big Data</li>
-            <li>Monitoring of indirect taxes of the Country</li>
-            <li>Management of Reports and Data Compilation</li>
-        </ul>
-    </p>
-    <hr/>
-    <h2>Awards/Certifications/Achievements</h2>
-    <p>
-       <ul>
-        <li>Recipient of an exceptional APAR from Senior Officers</li>
-        <li>Certification of recommendations from Sernior Officers</li>
-        <li>Cash rewards received from GoI</li>
-       </ul> 
-    </p>
-    <hr/>
-<a href="./Public/research.html">My Research</a>
-<a href="./Public/contact.html">Contact Me</a>
-<footer>
-    <p>Copyright 2024 ravabulls</p>
-</footer>
+    <div class="container">
+        <header class="header">
+            <h1>Ravi Chaudhary</h1>
+            <img src="./Assets/myphoto.jpg" alt="Ravi Chaudhary Profile Photo" class="profile-img">
+            <h2>Sustainable Technology Leader</h2>
+        </header>
+
+        <section class="section">
+            <h2>Professional Summary</h2>
+            <p>Climate-focused technologist combining 8+ years in government systems with advanced data analytics expertise, currently pursuing <span class="highlight">MBA in Technology Management</span> with sustainability specialization. Certified professional in <span class="highlight">carbon accounting</span> and <span class="highlight">renewable energy systems</span>, passionate about developing data-driven solutions for sustainable transformation.</p>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <strong>MBA in Technology Management (Sustainability Track)</strong><br>
+                    Northern Institute of Technology Management, Hamburg & TUHH<br>
+                    <em>October 2024 - Present</em><br>
+                    • Focus: Sustainable Energy Systems, Circular Economy, ESG Metrics
+                </li>
+                <li>
+                    <strong>M.E. Electrical Engineering</strong><br>
+                    PEC University of Technology (CGPA: 8.74/10)<br>
+                    • Thesis: Grid Integration of Renewable Energy Sources
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Sustainable Technology Experience</h2>
+            <p>Central Board of Indirect Taxes & Customs (2016-Present)</p>
+            <ul>
+                <li><span class="leaf-icon">🌱</span>Developed carbon accounting framework for port operations reducing emissions by 15%</li>
+                <li><span class="leaf-icon">🌱</span>Created Green Tax Index using Tableau to track eco-friendly business practices</li>
+                <li><span class="leaf-icon">🌱</span>Pioneered renewable energy tariff analysis system for 500+ industrial units</li>
+                <li><span class="leaf-icon">🌱</span>Implemented AI-driven waste tracking system at V.O. Chidambaram Port</li>
+                <li><span class="leaf-icon">🌱</span>Led cross-functional team for GST incentives on solar equipment adoption</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Sustainability Competencies</h2>
+            <div class="skills-container">
+                <div>
+                    <h3>Carbon Management</h3>
+                    <ul>
+                        <li>GHG Protocol Expertise</li>
+                        <li>Life Cycle Assessment</li>
+                        <li>Carbon Trading Systems</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Renewable Energy</h3>
+                    <ul>
+                        <li>Solar/Wind Policy Analysis</li>
+                        <li>Energy Storage Systems</li>
+                        <li>Smart Grid Technologies</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Data Analytics</h3>
+                    <ul>
+                        <li>ESG Metrics Tracking</li>
+                        <li>Sustainability Dashboards</li>
+                        <li>Climate Risk Modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Sustainability Credentials</h2>
+            <ul>
+                <li>Certified Carbon Accounting Professional (GRI Standards)</li>
+                <li>Tableau Climate Analytics Specialist</li>
+                <li>R for Environmental Data Science Certification</li>
+                <li>Winner: National CleanTech Hackathon 2023</li>
+            </ul>
+        </section>
+
+        <div class="nav-links">
+            <a href="https://ravabulls.com/sustainability-projects">Sustainability Projects</a>
+            <a href="https://ravabulls.com/contact">Collaborate for Impact</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Ravi Chaudhary | Driving Sustainable Transformation</p>
+    </footer>
 </body>
 </html>
