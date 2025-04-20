@@ -1,166 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ravi Chaudhary – Résumé</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ravi Chaudhary — Résumé</title>
 
-  <!-- —— Colour & typography tokens —— -->
+  <!-- —— Futuristic style sheet —— -->
   <style>
+    /* —— Colour tokens —— */
     :root{
-      --primary:#2b8c44;
-      --secondary:#4caf50;
-      --accent:#8bc34a;
-      --text:#1b5e20;
-      --bg:#f1f8e9;
+      --primary:#00e5ff;            /* neon‑cyan */
+      --secondary:#ff4081;          /* neon‑pink */
+      --accent:#00bfa5;             /* teal */
+      --text:#ffffff;
+      --glass-bg:rgba(255,255,255,0.10);
     }
 
     /* —— Global reset —— */
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-    body{background:var(--bg);color:var(--text);line-height:1.6;padding:2rem;}
 
-    /* —— Wrapper —— */
-    .container{max-width:1100px;margin:0 auto;background:#fff;padding:2rem;border-radius:15px;box-shadow:0 0 20px rgba(0,0,0,.1);}
-
-    /* —— Header —— */
-    .header{text-align:center;margin-bottom:2rem;border-bottom:3px solid var(--accent);padding-bottom:1rem;}
-    h1{color:var(--primary);font-size:2.5rem;margin-bottom:.5rem;}
-    .profile-img{
-      width:180px;height:auto;              /* rectangular — keeps original aspect ratio */
-      object-fit:cover;
-      border:5px solid var(--accent);
-      box-shadow:0 5px 15px rgba(0,0,0,.1);
-      margin:.25rem auto 1rem;
-      display:block;
+    /* —— Full‑screen background —— */
+    html,body{height:100%;width:100%;}
+    body{
+      background:url('Assets/future-bg.png') center/cover no-repeat fixed;
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:1.5rem;
     }
-    .contact{font-size:.95rem;color:var(--primary);}
 
-    /* —— Sections —— */
-    h2{color:var(--secondary);margin:1.5rem 0 .75rem;border-bottom:2px solid var(--accent);padding-bottom:.25rem;}
-    .section{background:#f9fbe7;border-radius:10px;padding:1.25rem;margin-bottom:2rem;}
+    /* —— Glass card —— */
+    .resume{
+      max-width:1300px;
+      width:100%;
+      height:calc(100vh - 3rem);   /* fits in viewport */
+      display:grid;
+      grid-template-columns:1.7fr 1fr;
+      gap:2.5rem;
+      padding:2.5rem 3rem;
+      border-radius:24px;
+      background:var(--glass-bg);
+      backdrop-filter:blur(16px) saturate(180%);
+      -webkit-backdrop-filter:blur(16px) saturate(180%);
+      border:1px solid rgba(255,255,255,0.25);
+      overflow:hidden;             /* hide any accidental overflow */
+      box-shadow:0 0 40px rgba(0,0,0,0.35);
+    }
 
-    ul{padding-left:1.5rem;}
-    li{margin-bottom:.6rem;}
+    /* —— Left column (info) —— */
+    .info{
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      gap:1.2rem;
+    }
+    h1{
+      font-size:2.8rem;
+      font-weight:700;
+      color:var(--primary);
+      text-shadow:0 0 8px rgba(0,229,255,.7);
+      letter-spacing:1px;
+    }
+    h2{
+      font-size:1.25rem;
+      color:var(--secondary);
+      margin-bottom:.35rem;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+    section{margin-bottom:.6rem;}
+    ul{padding-left:1.2rem;}
+    li{margin:.35rem 0;font-size:.88rem;line-height:1.35;}
+
+    /* —— Contact line —— */
+    .contact{
+      font-size:.9rem;
+      margin:.4rem 0 .9rem;
+      color:var(--accent);
+    }
 
     /* —— Skills grid —— */
-    .skills-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:.75rem;}
-    .skills-grid h3{margin-bottom:.4rem;color:var(--primary);font-size:1.1rem;}
+    .skills{
+      display:grid;
+      gap:.6rem 1.2rem;
+      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    }
+    .skills h3{
+      font-size:.95rem;
+      font-weight:600;
+      margin-bottom:.25rem;
+      color:var(--primary);
+    }
 
-    /* —— Footer —— */
-    footer{text-align:center;margin-top:2rem;padding:1rem;color:var(--primary);border-top:1px solid var(--accent);font-size:.9rem;}
+    /* —— Right column (photo) —— */
+    .photo-wrapper{
+      display:flex;
+      align-items:flex-start;
+      justify-content:flex-end;
+    }
+    .photo{
+      width:260px;
+      max-width:100%;
+      border:6px solid var(--accent);
+      box-shadow:0 0 20px rgba(0,229,255,.4);
+      object-fit:cover;
+      border-radius:12px;
+    }
 
-    /* —— Mobile tweaks —— */
-    @media(max-width:768px){
-      body{padding:1rem;}
-      .container{padding:1rem;}
-      h1{font-size:2rem;}
-      .profile-img{width:140px;height:auto;margin:.25rem auto .75rem;}
+    /* —— Responsive tweaks —— */
+    @media(max-width:1100px){
+      .resume{grid-template-columns:1fr;grid-auto-rows:min-content 1fr;height:auto;}
+      .photo-wrapper{justify-content:center;margin-top:1.5rem;}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- —— Header —— -->
-    <header class="header">
-      <h1>Ravi Chaudhary</h1>
-      <img src="Assets/24021_19_268_FA.jpg" alt="Ravi Chaudhary photo" class="profile-img">
-      <p class="contact">
-        Kasernenstrasse 12, Apt.&nbsp;3.11,&nbsp;21073 Hamburg&nbsp;| (+49)&nbsp;1521&nbsp;529&nbsp;9785&nbsp;| ravi.chaudhary@nithh.de
-      </p>
-    </header>
+  <article class="resume">
+    <!-- —— INFO COLUMN —— -->
+    <div class="info">
 
-    <!-- —— Personal details —— -->
-    <section class="section">
-      <h2>Personal Details</h2>
-      <ul>
-        <li>Date & Place of Birth: 14 Sep 1988, India</li>
-        <li>Nationality: Indian</li>
-        <li>Marital Status: Unmarried</li>
-      </ul>
-    </section>
+      <!-- — Header — -->
+      <header>
+        <h1>Ravi Chaudhary</h1>
+        <p class="contact">
+          Kasernenstrasse 12 · 21073 Hamburg · (+49) 1521 529 9785 · ravi.chaudhary@nithh.de
+        </p>
+      </header>
 
-    <!-- —— Education —— -->
-    <section class="section">
-      <h2>University Education</h2>
-      <ul>
-        <li><strong>MBA (Technology Management)</strong>, NITH / TUHH Hamburg<br>
-            <em>Since Sep 2024 · Focus: Finance, Entrepreneurship, Global Innovation · Expected Sep 2026</em>
-        </li>
-        <li><strong>M.E. Electrical Engineering (Control Systems)</strong>, PEC University of Technology, Chandigarh<br>
-            <em>Jul 2011 – Oct 2013</em>
-        </li>
-        <li><strong>B.E. Electrical & Electronics Engineering</strong>, NIT Hamirpur<br>
-            <em>Jun 2007 – Jun 2011</em>
-        </li>
-      </ul>
-    </section>
+      <!-- — Personal — -->
+      <section>
+        <h2>Personal Details</h2>
+        <ul>
+          <li>Born 14 Sep 1988, India</li>
+          <li>Indian · Unmarried</li>
+        </ul>
+      </section>
 
-    <!-- —— Professional & research experience —— -->
-    <section class="section">
-      <h2>Professional & Research Experience</h2>
+      <!-- — Education — -->
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>MBA (Technology Management)</strong> — NITH/TUHH Hamburg, Sep 2024 – Sep 2026</li>
+          <li><strong>M.E. Electrical Engineering</strong> — PEC University, 2011–2013</li>
+          <li><strong>B.E. Electrical & Electronics</strong> — NIT Hamirpur, 2007–2011</li>
+        </ul>
+      </section>
 
-      <p><strong>Central Board of Indirect Taxes & Customs, Ministry of Finance, Govt of India — Indirect Taxation Officer</strong><br>
-         <em>Nov 2015 – Sep 2024</em></p>
-      <ul>
-        <li>Designed data‑driven revenue‑trend and anomaly analyses with Tableau and other analytical tools.</li>
-        <li>Co‑ordinated interdisciplinary teams (legal, finance, logistics) to streamline import/export compliance.</li>
-        <li>Led risk‑management investigations to prevent revenue leakage, informing policy improvements.</li>
-      </ul>
+      <!-- — Experience — -->
+      <section>
+        <h2>Experience</h2>
+        <ul>
+          <li><strong>Indirect Taxation Officer</strong>, Indian Ministry of Finance (2015–2024) – data analytics, compliance streamlining, risk management.</li>
+          <li><strong>Academic Instructor (Freelance)</strong> (2013–2015) – curriculum design & mentoring.</li>
+        </ul>
+      </section>
 
-      <p><strong>Academic Instructor (Freelance)</strong><br>
-         <em>Nov 2013 – Oct 2015</em></p>
-      <ul>
-        <li>Developed and delivered technical sessions on electrical engineering topics.</li>
-        <li>Mentored students for examinations and practical applications of complex concepts.</li>
-      </ul>
-    </section>
-
-    <!-- —— Skills —— -->
-    <section class="section">
-      <h2>Skills & Tools</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>Office Productivity</h3>
-          <ul><li>Office 365 Suite (Word, Excel, PowerPoint, Teams…)</li></ul>
+      <!-- — Skills — -->
+      <section>
+        <h2>Skills & Tools</h2>
+        <div class="skills">
+          <div>
+            <h3>Office Suite</h3>
+            Word, Excel, PowerPoint, Teams
+          </div>
+          <div>
+            <h3>Data Analytics</h3>
+            Tableau, Power BI, Looker Studio
+          </div>
+          <div>
+            <h3>Coding</h3>
+            Python, PHP, HTML/CSS
+          </div>
         </div>
-        <div>
-          <h3>Data Analytics & Research</h3>
-          <ul><li>Tableau, Power BI, Looker Studio</li></ul>
-        </div>
-        <div>
-          <h3>Programming & Technical</h3>
-          <ul><li>Python, PHP scripts, HTML/CSS</li></ul>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- —— Languages —— -->
-    <section class="section">
-      <h2>Languages</h2>
-      <ul>
-        <li>English – C1 (Proficient)</li>
-        <li>Deutsch – A1 (Beginner)</li>
-        <li>Hindi – Proficient</li>
-      </ul>
-    </section>
+      <!-- — Languages — -->
+      <section>
+        <h2>Languages</h2>
+        <ul>
+          <li>English — C1</li>
+          <li>Deutsch — A1</li>
+          <li>Hindi — Native</li>
+        </ul>
+      </section>
 
-    <!-- —— Achievements —— -->
-    <section class="section">
-      <h2>Achievements & Leadership</h2>
-      <ul>
-        <li>Joint Secretary for Technical & Cultural Clubs, NIT Hamirpur — strengthened team collaboration and event management.</li>
-        <li>Letters of recommendation for outstanding performance as best officer in department.</li>
-        <li>Created an innovative revenue‑analysis dashboard using Tableau.</li>
-      </ul>
-    </section>
+      <!-- — Achievements — -->
+      <section>
+        <h2>Achievements</h2>
+        <ul>
+          <li>Joint Secretary, Tech & Culture Clubs, NIT Hamirpur.</li>
+          <li>Letters of commendation for top performance.</li>
+          <li>Built revenue‑analysis dashboard (Tableau).</li>
+        </ul>
+      </section>
 
-    <!-- —— Interests —— -->
-    <section class="section">
-      <h2>Interests</h2>
-      <p>Entrepreneurship, Finance, Accounting, Simulations, Trading, Networking & Relationship‑building, Cultural Diversity, Team Collaboration, Teaching</p>
-    </section>
-  </div>
+    </div>
 
-  <footer>© 2025 Ravi Chaudhary</footer>
+    <!-- —— PHOTO COLUMN —— -->
+    <div class="photo-wrapper">
+      <img src="Assets/24021_19_268_FA.jpg" alt="Ravi Chaudhary" class="photo"/>
+    </div>
+  </article>
 </body>
 </html>
