@@ -1,237 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ravi Chaudhary</title>
-    <style>
-        :root {
-            --primary-color: #2b8c44;
-            --secondary-color: #4CAF50;
-            --accent-color: #8BC34A;
-            --text-color: #1B5E20;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravi Chaudhary – Résumé</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <!-- —— Color & typography tokens —— -->
+  <style>
+    :root{
+      --primary:#2b8c44;
+      --secondary:#4caf50;
+      --accent:#8bc34a;
+      --text:#1b5e20;
+      --bg:#f1f8e9;
+    }
 
-        body {
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #F1F8E9;
-            padding: 2rem;
-        }
+    /* —— Global reset —— */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
+    body{background:var(--bg);color:var(--text);line-height:1.6;padding:2rem;}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
+    /* —— Wrapper —— */
+    .container{max-width:1100px;margin:0 auto;background:#fff;padding:2rem;border-radius:15px;box-shadow:0 0 20px rgba(0,0,0,.1);}
 
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 1rem;
-        }
+    /* —— Head —— */
+    .header{text-align:center;margin-bottom:2rem;border-bottom:3px solid var(--accent);padding-bottom:1rem;}
+    h1{color:var(--primary);font-size:2.5rem;margin-bottom:.25rem;}
+    .contact{font-size:.95rem;color:var(--primary);}
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--accent-color);
-            margin: 1rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+    /* —— Sections —— */
+    h2{color:var(--secondary);margin:1.5rem 0 .75rem;border-bottom:2px solid var(--accent);padding-bottom:.25rem;}
+    .section{background:#f9fbe7;border-radius:10px;padding:1.25rem;margin-bottom:2rem;}
 
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    ul{padding-left:1.5rem;}
+    li{margin-bottom:.6rem;}
 
-        h2 {
-            color: var(--secondary-color);
-            margin: 1.5rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
-        }
+    /* —— Skills grid —— */
+    .skills-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:.75rem;}
+    .skills-grid h3{margin-bottom:.4rem;color:var(--primary);font-size:1.1rem;}
 
-        .section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            background: #F9FBE7;
-            border-radius: 10px;
-        }
+    /* —— Footer —— */
+    footer{text-align:center;margin-top:2rem;padding:1rem;color:var(--primary);border-top:1px solid var(--accent);font-size:.9rem;}
 
-        ul {
-            padding-left: 2rem;
-        }
-
-        li {
-            margin-bottom: 0.8rem;
-            line-height: 1.5;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: white;
-            background-color: var(--secondary-color);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
-            color: var(--primary-color);
-            border-top: 1px solid var(--accent-color);
-        }
-
-        .highlight {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .leaf-icon {
-            color: var(--accent-color);
-            margin-right: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    /* —— Mobile tweak —— */
+    @media(max-width:768px){
+      body{padding:1rem;}
+      .container{padding:1rem;}
+      h1{font-size:2rem;}
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Ravi Chaudhary</h1>
-            <img src="./Assets/myphoto.jpg" alt="Ravi Chaudhary Profile Photo" class="profile-img">
-            <h2>Sustainable Technology Leader</h2>
-        </header>
+  <div class="container">
+    <!-- —— Header —— -->
+    <header class="header">
+      <h1>Ravi Chaudhary</h1>
+      <p class="contact">
+        Kasernenstrasse 12, Apt.&nbsp;3.11,&nbsp;21073 Hamburg&nbsp;|&nbsp;(+49)&nbsp;1521&nbsp;529&nbsp;9785&nbsp;|&nbsp;ravi.chaudhary@nithh.de
+      </p>
+    </header>
 
-        <section class="section">
-            <h2>Professional Summary</h2>
-            <p>Climate-focused technologist combining 8+ years in government systems with advanced data analytics expertise, currently pursuing <span class="highlight">MBA in Technology Management</span> with sustainability specialization. Certified professional in <span class="highlight">carbon accounting</span> and <span class="highlight">renewable energy systems</span>, passionate about developing data-driven solutions for sustainable transformation.</p>
-        </section>
+    <!-- —— Personal details —— -->
+    <section class="section">
+      <h2>Personal Details</h2>
+      <ul>
+        <li>Date & Place of Birth: 14 Sep 1988, India</li>
+        <li>Nationality: Indian</li>
+        <li>Marital Status: Unmarried</li>
+      </ul>
+    </section>
 
-        <section class="section">
-            <h2>Education</h2>
-            <ul>
-                <li>
-                    <strong>MBA in Technology Management (Sustainability Track)</strong><br>
-                    Northern Institute of Technology Management, Hamburg & TUHH<br>
-                    <em>October 2024 - Present</em><br>
-                    • Focus: Sustainable Energy Systems, Circular Economy, ESG Metrics
-                </li>
-                <li>
-                    <strong>M.E. Electrical Engineering</strong><br>
-                    PEC University of Technology (CGPA: 8.74/10)<br>
-                    • Thesis: Grid Integration of Renewable Energy Sources
-                </li>
-            </ul>
-        </section>
+    <!-- —— Education —— -->
+    <section class="section">
+      <h2>University Education</h2>
+      <ul>
+        <li><strong>MBA (Technology Management)</strong>, NITH / TUHH Hamburg<br>
+            <em>Since Sep 2024 · Focus: Finance, Entrepreneurship, Global Innovation · Expected Sep 2026</em>
+        </li>
+        <li><strong>M.E. Electrical Engineering (Control Systems)</strong>, PEC University of Technology, Chandigarh<br>
+            <em>Jul 2011 – Oct 2013</em>
+        </li>
+        <li><strong>B.E. Electrical & Electronics Engineering</strong>, NIT Hamirpur<br>
+            <em>Jun 2007 – Jun 2011</em>
+        </li>
+      </ul>
+    </section>
 
-        <section class="section">
-            <h2>Sustainable Technology Experience</h2>
-            <p>Central Board of Indirect Taxes & Customs (2016-Present)</p>
-            <ul>
-                <li><span class="leaf-icon">🌱</span>Developed carbon accounting framework for port operations reducing emissions by 15%</li>
-                <li><span class="leaf-icon">🌱</span>Created Green Tax Index using Tableau to track eco-friendly business practices</li>
-                <li><span class="leaf-icon">🌱</span>Pioneered renewable energy tariff analysis system for 500+ industrial units</li>
-                <li><span class="leaf-icon">🌱</span>Implemented AI-driven waste tracking system at V.O. Chidambaram Port</li>
-                <li><span class="leaf-icon">🌱</span>Led cross-functional team for GST incentives on solar equipment adoption</li>
-            </ul>
-        </section>
+    <!-- —— Professional & research experience —— -->
+    <section class="section">
+      <h2>Professional & Research Experience</h2>
 
-        <section class="section">
-            <h2>Sustainability Competencies</h2>
-            <div class="skills-container">
-                <div>
-                    <h3>Carbon Management</h3>
-                    <ul>
-                        <li>GHG Protocol Expertise</li>
-                        <li>Life Cycle Assessment</li>
-                        <li>Carbon Trading Systems</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Renewable Energy</h3>
-                    <ul>
-                        <li>Solar/Wind Policy Analysis</li>
-                        <li>Energy Storage Systems</li>
-                        <li>Smart Grid Technologies</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Data Analytics</h3>
-                    <ul>
-                        <li>ESG Metrics Tracking</li>
-                        <li>Sustainability Dashboards</li>
-                        <li>Climate Risk Modeling</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <p><strong>Central Board of Indirect Taxes & Customs, Ministry of Finance, Govt of India — Indirect Taxation Officer</strong><br>
+         <em>Nov 2015 – Sep 2024</em></p>
+      <ul>
+        <li>Designed data‑driven revenue‑trend and anomaly analyses with Tableau and other analytical tools.</li>
+        <li>Co‑ordinated interdisciplinary teams (legal, finance, logistics) to streamline import/export compliance.</li>
+        <li>Led risk‑management investigations to prevent revenue leakage, informing policy improvements.</li>
+      </ul>
 
-        <section class="section">
-            <h2>Sustainability Credentials</h2>
-            <ul>
-                <li>Certified Carbon Accounting Professional (GRI Standards)</li>
-                <li>Tableau Climate Analytics Specialist</li>
-                <li>R for Environmental Data Science Certification</li>
-                <li>Winner: National CleanTech Hackathon 2023</li>
-            </ul>
-        </section>
+      <p><strong>Academic Instructor (Freelance)</strong><br>
+         <em>Nov 2013 – Oct 2015</em></p>
+      <ul>
+        <li>Developed and delivered technical sessions on electrical engineering topics.</li>
+        <li>Mentored students for examinations and practical applications of complex concepts.</li>
+      </ul>
+    </section>
 
-        <div class="nav-links">
-            <a href="https://ravabulls.com/sustainability-projects">Sustainability Projects</a>
-            <a href="https://ravabulls.com/contact">Collaborate for Impact</a>
+    <!-- —— Skills —— -->
+    <section class="section">
+      <h2>Skills & Tools</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Office Productivity</h3>
+          <ul>
+            <li>Office 365 Suite (Word, Excel, PowerPoint, Teams…)</li>
+          </ul>
         </div>
-    </div>
+        <div>
+          <h3>Data Analytics & Research</h3>
+          <ul>
+            <li>Tableau, Power BI, Looker Studio</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Programming & Technical</h3>
+          <ul>
+            <li>Python, PHP scripts, HTML/CSS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-        <p>© 2024 Ravi Chaudhary | Driving Sustainable Transformation</p>
-    </footer>
+    <!-- —— Languages —— -->
+    <section class="section">
+      <h2>Languages</h2>
+      <ul>
+        <li>English – C1 (Proficient)</li>
+        <li>Deutsch – A1 (Beginner)</li>
+        <li>Hindi – Proficient</li>
+      </ul>
+    </section>
+
+    <!-- —— Achievements —— -->
+    <section class="section">
+      <h2>Achievements & Leadership</h2>
+      <ul>
+        <li>Joint Secretary for Technical & Cultural Clubs, NIT Hamirpur — strengthened team collaboration and event management.</li>
+        <li>Letters of recommendation for outstanding performance as best officer in department.</li>
+        <li>Created an innovative revenue‑analysis dashboard using Tableau.</li>
+      </ul>
+    </section>
+
+    <!-- —— Interests —— -->
+    <section class="section">
+      <h2>Interests</h2>
+      <p>Entrepreneurship, Finance, Accounting, Simulations, Trading, Networking & Relationship‑building, Cultural Diversity, Team Collaboration, Teaching</p>
+    </section>
+  </div>
+
+  <footer>© 2025 Ravi Chaudhary</footer>
 </body>
 </html>
