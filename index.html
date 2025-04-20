@@ -3,204 +3,221 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ravi Chaudhary — Résumé</title>
-
-  <!-- —— Futuristic style sheet —— -->
+  <title>Ravi Chaudhary — Futuristic Resume</title>
   <style>
-    /* —— Colour tokens —— */
-    :root{
-      --primary:#00e5ff;            /* neon‑cyan */
-      --secondary:#ff4081;          /* neon‑pink */
-      --accent:#00bfa5;             /* teal */
-      --text:#ffffff;
-      --glass-bg:rgba(255,255,255,0.10);
+    /* === Root Theme Variables === */
+    :root {
+      --primary: #00e5ff;
+      --secondary: #ff4081;
+      --accent: #00ffc3;
+      --text-light: #ffffff;
+      --text-dark: #1a1a1a;
+      --glass-bg-light: rgba(255, 255, 255, 0.18);
+      --glass-bg-dark: rgba(30, 30, 30, 0.45);
+      --blur: blur(20px) saturate(180%);
     }
 
-    /* —— Global reset —— */
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;}
-
-    /* —— Full‑screen background —— */
-    html,body{height:100%;width:100%;}
-    body{
-      background:url('Assets/future-bg.png') center/cover no-repeat fixed;
-      color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:1.5rem;
+    /* === Reset and Base === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* —— Glass card —— */
-    .resume{
-      max-width:1300px;
-      width:100%;
-      height:calc(100vh - 3rem);   /* fits in viewport */
-      display:grid;
-      grid-template-columns:1.7fr 1fr;
-      gap:2.5rem;
-      padding:2.5rem 3rem;
-      border-radius:24px;
-      background:var(--glass-bg);
-      backdrop-filter:blur(16px) saturate(180%);
-      -webkit-backdrop-filter:blur(16px) saturate(180%);
-      border:1px solid rgba(255,255,255,0.25);
-      overflow:hidden;             /* hide any accidental overflow */
-      box-shadow:0 0 40px rgba(0,0,0,0.35);
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: background 0.3s ease;
     }
 
-    /* —— Left column (info) —— */
-    .info{
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      gap:1.2rem;
-    }
-    h1{
-      font-size:2.8rem;
-      font-weight:700;
-      color:var(--primary);
-      text-shadow:0 0 8px rgba(0,229,255,.7);
-      letter-spacing:1px;
-    }
-    h2{
-      font-size:1.25rem;
-      color:var(--secondary);
-      margin-bottom:.35rem;
-      text-transform:uppercase;
-      letter-spacing:.5px;
-    }
-    section{margin-bottom:.6rem;}
-    ul{padding-left:1.2rem;}
-    li{margin:.35rem 0;font-size:.88rem;line-height:1.35;}
-
-    /* —— Contact line —— */
-    .contact{
-      font-size:.9rem;
-      margin:.4rem 0 .9rem;
-      color:var(--accent);
+    body {
+      background: url('Assets/future-bg.png') center center / cover no-repeat fixed;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* —— Skills grid —— */
-    .skills{
-      display:grid;
-      gap:.6rem 1.2rem;
-      grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    }
-    .skills h3{
-      font-size:.95rem;
-      font-weight:600;
-      margin-bottom:.25rem;
-      color:var(--primary);
-    }
-
-    /* —— Right column (photo) —— */
-    .photo-wrapper{
-      display:flex;
-      align-items:flex-start;
-      justify-content:flex-end;
-    }
-    .photo{
-      width:260px;
-      max-width:100%;
-      border:6px solid var(--accent);
-      box-shadow:0 0 20px rgba(0,229,255,.4);
-      object-fit:cover;
-      border-radius:12px;
+    /* === Card Structure === */
+    .card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      background: var(--glass-bg-dark);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+      padding: 2rem 2.5rem;
+      width: 90%;
+      max-width: 1300px;
+      height: 90vh;
+      overflow: hidden;
+      position: relative;
     }
 
-    /* —— Responsive tweaks —— */
-    @media(max-width:1100px){
-      .resume{grid-template-columns:1fr;grid-auto-rows:min-content 1fr;height:auto;}
-      .photo-wrapper{justify-content:center;margin-top:1.5rem;}
+    /* === Info Panel === */
+    .info {
+      width: 65%;
+      overflow-y: auto;
+      padding-right: 1.5rem;
+    }
+
+    .info h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+    }
+
+    .contact {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      color: var(--secondary);
+      margin: 1rem 0 0.4rem;
+      text-transform: uppercase;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    li {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .skills h3 {
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    /* === Image Panel === */
+    .photo-wrapper {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 260px;
+      border: 6px solid var(--accent);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+      object-fit: cover;
+      transition: 0.3s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 45px rgba(0, 255, 255, 0.75);
+    }
+
+    /* === Buttons === */
+    .actions {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+    }
+
+    button:hover {
+      background: var(--primary);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+      transform: translateY(-1px);
+    }
+
+    /* === Scrollbar Style === */
+    .info::-webkit-scrollbar {
+      width: 6px;
+    }
+    .info::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 1000px) {
+      .card {
+        flex-direction: column;
+        height: auto;
+        overflow-y: auto;
+      }
+
+      .info, .photo-wrapper {
+        width: 100%;
+      }
+
+      .photo {
+        margin-top: 1.5rem;
+        max-width: 220px;
+      }
+
+      .actions {
+        top: auto;
+        bottom: 1rem;
+        right: 50%;
+        transform: translateX(50%);
+      }
     }
   </style>
 </head>
 <body>
-  <article class="resume">
-    <!-- —— INFO COLUMN —— -->
+  <div class="card">
+    <!-- === Buttons: Download + Theme Toggle === -->
+    <div class="actions">
+      <button onclick="downloadResume()">Download PDF</button>
+      <button onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <!-- === Info Column === -->
     <div class="info">
+      <h1>Ravi Chaudhary</h1>
+      <p class="contact">Kasernenstrasse 12 · 21073 Hamburg · (+49) 1521 529 9785 · ravi.chaudhary@nithh.de</p>
 
-      <!-- — Header — -->
-      <header>
-        <h1>Ravi Chaudhary</h1>
-        <p class="contact">
-          Kasernenstrasse 12 · 21073 Hamburg · (+49) 1521 529 9785 · ravi.chaudhary@nithh.de
-        </p>
-      </header>
+      <h2>Personal Details</h2>
+      <ul>
+        <li>Born 14 Sep 1988, India</li>
+        <li>Nationality: Indian</li>
+        <li>Marital Status: Unmarried</li>
+      </ul>
 
-      <!-- — Personal — -->
-      <section>
-        <h2>Personal Details</h2>
-        <ul>
-          <li>Born 14 Sep 1988, India</li>
-          <li>Indian · Unmarried</li>
-        </ul>
-      </section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>MBA (Technology Management)</strong> — NITH/TUHH Hamburg (2024–2026)</li>
+        <li><strong>M.E. Electrical Engineering</strong> — PEC Chandigarh (2011–2013)</li>
+        <li><strong>B.E. Electrical & Electronics</strong> — NIT Hamirpur (2007–2011)</li>
+      </ul>
 
-      <!-- — Education — -->
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li><strong>MBA (Technology Management)</strong> — NITH/TUHH Hamburg, Sep 2024 – Sep 2026</li>
-          <li><strong>M.E. Electrical Engineering</strong> — PEC University, 2011–2013</li>
-          <li><strong>B.E. Electrical & Electronics</strong> — NIT Hamirpur, 2007–2011</li>
-        </ul>
-      </section>
-
-      <!-- — Experience — -->
-      <section>
-        <h2>Experience</h2>
-        <ul>
-          <li><strong>Indirect Taxation Officer</strong>, Indian Ministry of Finance (2015–2024) – data analytics, compliance streamlining, risk management.</li>
-          <li><strong>Academic Instructor (Freelance)</strong> (2013–2015) – curriculum design & mentoring.</li>
-        </ul>
-      </section>
-
-      <!-- — Skills — -->
-      <section>
-        <h2>Skills & Tools</h2>
-        <div class="skills">
-          <div>
-            <h3>Office Suite</h3>
-            Word, Excel, PowerPoint, Teams
-          </div>
-          <div>
-            <h3>Data Analytics</h3>
-            Tableau, Power BI, Looker Studio
-          </div>
-          <div>
-            <h3>Coding</h3>
-            Python, PHP, HTML/CSS
-          </div>
-        </div>
-      </section>
-
-      <!-- — Languages — -->
-      <section>
-        <h2>Languages</h2>
-        <ul>
-          <li>English — C1</li>
-          <li>Deutsch — A1</li>
-          <li>Hindi — Native</li>
-        </ul>
-      </section>
-
-      <!-- — Achievements — -->
-      <section>
-        <h2>Achievements</h2>
-        <ul>
-          <li>Joint Secretary, Tech & Culture Clubs, NIT Hamirpur.</li>
-          <li>Letters of commendation for top performance.</li>
-          <li>Built revenue‑analysis dashboard (Tableau).</li>
-        </ul>
-      </section>
-
-    </div>
-
-    <!-- —— PHOTO COLUMN —— -->
-    <div class="photo-wrapper">
-      <img src="Assets/24021_19_268_FA.jpg" alt="Ravi Chaudhary" class="photo"/>
-    </div>
-  </article>
-</body>
-</html>
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Indirect Taxation Officer</strong> — Ministry of Finance (2015–202
